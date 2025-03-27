@@ -1,10 +1,29 @@
+import AddUser from './adduser/AddUser'
 import './App.css'
+import User from './getuser/User'
+import {createBrowserRouter, RouterProvider} from "react-router-dom"
 
 function App() {
 
+  const route = createBrowserRouter([
+    {
+      path: "/",
+      element: <User />,
+    },
+    {
+      path: "/add-user",
+      element: <AddUser />,
+    },
+    {
+      path: "/edit-user",
+      element: <div>add users</div>,
+    },
+  ])
+
+
   return (
    <div className='App'>
-      <h1>This is a React App</h1>
+     <RouterProvider router={route} ></RouterProvider>
    </div>
   )
 }
